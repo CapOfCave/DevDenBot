@@ -8,7 +8,7 @@ import me.bristermitten.devdenbot.data.StatsUsers
 import me.bristermitten.devdenbot.extensions.await
 import me.bristermitten.devdenbot.util.inc
 import me.bristermitten.devdenbot.util.log
-import me.bristermitten.devdenbot.util.mention
+import me.bristermitten.devdenbot.util.mentionRole
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent
 import net.dv8tion.jda.api.hooks.ListenerAdapter
 import java.util.concurrent.TimeUnit
@@ -45,7 +45,7 @@ class BumpNotificationListener : ListenerAdapter() {
 
         GlobalScope.launch {
             delay(BUMP_COOLDOWN)
-            event.channel.sendMessage("${mention(BUMP_NOTIFICATIONS_ROLE_ID)}, the server is ready to be bumped! **!d bump**")
+            event.channel.sendMessage("${mentionRole(BUMP_NOTIFICATIONS_ROLE_ID)}, the server is ready to be bumped! **!d bump**")
                 .await()
             logger.trace { "Notified Bump Notification users that a new bump is available." }
         }

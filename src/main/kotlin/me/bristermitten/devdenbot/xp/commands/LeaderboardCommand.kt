@@ -9,7 +9,7 @@ import me.bristermitten.devdenbot.extensions.WHITESPACE_REGEX
 import me.bristermitten.devdenbot.extensions.commands.awaitReply
 import me.bristermitten.devdenbot.leaderboard.DevDenPaginator
 import me.bristermitten.devdenbot.serialization.PrettyName
-import me.bristermitten.devdenbot.util.mention
+import me.bristermitten.devdenbot.util.mentionUser
 import java.util.concurrent.atomic.AtomicInteger
 import javax.inject.Inject
 import kotlin.reflect.KTypeProjection
@@ -102,7 +102,7 @@ class LeaderboardCommand @Inject constructor(
             { builder, statsUser, index ->
                 builder.field(
                     "#${index + 1} - ${by(statsUser)} $leaderboardName",
-                    mention(statsUser.userId)
+                    mentionUser(statsUser.userId)
                 )
             },
             entryCount = users.size,

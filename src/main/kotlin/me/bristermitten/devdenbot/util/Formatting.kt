@@ -6,4 +6,8 @@ import java.util.*
 
 fun formatNumber(a: Number): String = NumberFormat.getNumberInstance(Locale.US).format(a)
 
-fun mention(id: Long): String = "<@$id>"
+fun mentionUser(userId: Long): String = "<@$userId>"
+
+fun mentionRole(roleId: Long): String = "<@&$roleId>"
+
+
