@@ -3,7 +3,7 @@ package me.bristermitten.devdenbot
 import mu.KotlinLogging
 import kotlin.system.measureTimeMillis
 
-fun main() {
+fun main() { 
     val log = KotlinLogging.logger("App")
 
     log.info("Bot starting!")
